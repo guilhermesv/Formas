@@ -1,0 +1,1216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="acfdadd6-81df-4260-9378-820efd5d2090">
+    <property name="canvasHeight" value="1080"/>
+    <property name="canvasWidth" value="1920"/>
+    <property name="canvasX" value="-960"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="combine2">
+        <node name="SELETOR" position="34.00,-27.00" prototype="core.network">
+            <node name="color5" position="33.00,-28.00" prototype="color.color"/>
+            <node name="color6" position="37.00,-28.00" prototype="color.color"/>
+            <node name="color7" position="25.00,-28.00" prototype="color.color"/>
+            <node name="color8" position="29.00,-28.00" prototype="color.color"/>
+            <node name="cull5" position="25.00,-30.00" prototype="list.cull"/>
+            <node name="cull6" position="33.00,-30.00" prototype="list.cull"/>
+            <node name="cull7" position="29.00,-30.00" prototype="list.cull"/>
+            <node name="cull8" position="37.00,-30.00" prototype="list.cull"/>
+            <node name="equals5" position="37.00,-32.00" prototype="string.equals"/>
+            <node name="equals6" position="33.00,-32.00" prototype="string.equals"/>
+            <node name="equals7" position="29.00,-32.00" prototype="string.equals"/>
+            <node name="equals8" position="25.00,-32.00" prototype="string.equals"/>
+            <node name="import_svg2" position="25.00,-37.00" prototype="corevector.import_svg">
+                <port name="file" type="string" value="paleta.svg"/>
+            </node>
+            <node name="logical5" position="37.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical6" position="33.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical7" position="29.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical8" position="25.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="lookup2" position="25.00,-35.00" prototype="data.lookup">
+                <port name="key" type="string" value="fill"/>
+            </node>
+            <node name="pick5" position="37.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="7"/>
+            </node>
+            <node name="pick6" position="33.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="7"/>
+            </node>
+            <node name="pick7" position="29.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="9"/>
+            </node>
+            <node name="pick8" position="25.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+            </node>
+            <node name="random_numbers2" position="29.00,-37.00" prototype="math.random_numbers">
+                <port name="amount" type="int" value="4"/>
+                <port name="seed" type="int" value="3"/>
+            </node>
+            <node name="slice5" position="29.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="1"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice6" position="33.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="2"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice7" position="37.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="3"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice8" position="25.00,-34.00" prototype="list.slice">
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="ungroup2" position="25.00,-36.00" prototype="corevector.ungroup"/>
+            <port childReference="random_numbers2.seed" description="" label="" name="seed" range="value" type="int" value="3" widget="int"/>
+            <conn input="ungroup2.shape" output="import_svg2"/>
+            <conn input="lookup2.list" output="ungroup2"/>
+            <conn input="pick8.list" output="lookup2"/>
+            <conn input="equals8.string" output="lookup2"/>
+            <conn input="equals8.equals" output="pick8"/>
+            <conn input="cull5.list" output="lookup2"/>
+            <conn input="logical8.boolean1" output="equals8"/>
+            <conn input="cull5.booleans" output="logical8"/>
+            <conn input="equals7.equals" output="pick7"/>
+            <conn input="logical7.boolean1" output="equals7"/>
+            <conn input="pick7.list" output="cull5"/>
+            <conn input="equals7.string" output="cull5"/>
+            <conn input="cull7.list" output="cull5"/>
+            <conn input="cull7.booleans" output="logical7"/>
+            <conn input="equals6.equals" output="pick6"/>
+            <conn input="logical6.boolean1" output="equals6"/>
+            <conn input="cull6.booleans" output="logical6"/>
+            <conn input="equals6.string" output="cull7"/>
+            <conn input="cull6.list" output="cull7"/>
+            <conn input="pick6.list" output="cull7"/>
+            <conn input="equals5.equals" output="pick5"/>
+            <conn input="logical5.boolean1" output="equals5"/>
+            <conn input="cull8.booleans" output="logical5"/>
+            <conn input="pick5.list" output="cull6"/>
+            <conn input="equals5.string" output="cull6"/>
+            <conn input="cull8.list" output="cull6"/>
+            <conn input="slice8.list" output="random_numbers2"/>
+            <conn input="pick8.seed" output="slice8"/>
+            <conn input="slice5.list" output="random_numbers2"/>
+            <conn input="pick7.seed" output="slice5"/>
+            <conn input="slice6.list" output="random_numbers2"/>
+            <conn input="pick6.seed" output="slice6"/>
+            <conn input="slice7.list" output="random_numbers2"/>
+            <conn input="pick5.seed" output="slice7"/>
+            <conn input="color7.color" output="pick8"/>
+            <conn input="color8.color" output="pick7"/>
+            <conn input="color5.color" output="pick6"/>
+            <conn input="color6.color" output="pick5"/>
+        </node>
+        <node name="SELETOR1" position="38.00,-27.00" prototype="core.network">
+            <node name="color5" position="33.00,-28.00" prototype="color.color"/>
+            <node name="color6" position="37.00,-28.00" prototype="color.color"/>
+            <node name="color7" position="25.00,-28.00" prototype="color.color"/>
+            <node name="color8" position="29.00,-28.00" prototype="color.color"/>
+            <node name="cull5" position="25.00,-30.00" prototype="list.cull"/>
+            <node name="cull6" position="33.00,-30.00" prototype="list.cull"/>
+            <node name="cull7" position="29.00,-30.00" prototype="list.cull"/>
+            <node name="cull8" position="37.00,-30.00" prototype="list.cull"/>
+            <node name="equals5" position="37.00,-32.00" prototype="string.equals"/>
+            <node name="equals6" position="33.00,-32.00" prototype="string.equals"/>
+            <node name="equals7" position="29.00,-32.00" prototype="string.equals"/>
+            <node name="equals8" position="25.00,-32.00" prototype="string.equals"/>
+            <node name="import_svg2" position="25.00,-37.00" prototype="corevector.import_svg">
+                <port name="file" type="string" value="paleta.svg"/>
+            </node>
+            <node name="logical5" position="37.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical6" position="33.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical7" position="29.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical8" position="25.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="lookup2" position="25.00,-35.00" prototype="data.lookup">
+                <port name="key" type="string" value="fill"/>
+            </node>
+            <node name="pick5" position="37.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="7"/>
+            </node>
+            <node name="pick6" position="33.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="7"/>
+            </node>
+            <node name="pick7" position="29.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="9"/>
+            </node>
+            <node name="pick8" position="25.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+            </node>
+            <node name="random_numbers2" position="29.00,-37.00" prototype="math.random_numbers">
+                <port name="amount" type="int" value="4"/>
+                <port name="seed" type="int" value="3"/>
+            </node>
+            <node name="slice5" position="29.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="1"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice6" position="33.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="2"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice7" position="37.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="3"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice8" position="25.00,-34.00" prototype="list.slice">
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="ungroup2" position="25.00,-36.00" prototype="corevector.ungroup"/>
+            <port childReference="random_numbers2.seed" description="" label="" name="seed" range="value" type="int" value="3" widget="int"/>
+            <conn input="ungroup2.shape" output="import_svg2"/>
+            <conn input="lookup2.list" output="ungroup2"/>
+            <conn input="pick8.list" output="lookup2"/>
+            <conn input="equals8.string" output="lookup2"/>
+            <conn input="equals8.equals" output="pick8"/>
+            <conn input="cull5.list" output="lookup2"/>
+            <conn input="logical8.boolean1" output="equals8"/>
+            <conn input="cull5.booleans" output="logical8"/>
+            <conn input="equals7.equals" output="pick7"/>
+            <conn input="logical7.boolean1" output="equals7"/>
+            <conn input="pick7.list" output="cull5"/>
+            <conn input="equals7.string" output="cull5"/>
+            <conn input="cull7.list" output="cull5"/>
+            <conn input="cull7.booleans" output="logical7"/>
+            <conn input="equals6.equals" output="pick6"/>
+            <conn input="logical6.boolean1" output="equals6"/>
+            <conn input="cull6.booleans" output="logical6"/>
+            <conn input="equals6.string" output="cull7"/>
+            <conn input="cull6.list" output="cull7"/>
+            <conn input="pick6.list" output="cull7"/>
+            <conn input="equals5.equals" output="pick5"/>
+            <conn input="logical5.boolean1" output="equals5"/>
+            <conn input="cull8.booleans" output="logical5"/>
+            <conn input="pick5.list" output="cull6"/>
+            <conn input="equals5.string" output="cull6"/>
+            <conn input="cull8.list" output="cull6"/>
+            <conn input="slice8.list" output="random_numbers2"/>
+            <conn input="pick8.seed" output="slice8"/>
+            <conn input="slice5.list" output="random_numbers2"/>
+            <conn input="pick7.seed" output="slice5"/>
+            <conn input="slice6.list" output="random_numbers2"/>
+            <conn input="pick6.seed" output="slice6"/>
+            <conn input="slice7.list" output="random_numbers2"/>
+            <conn input="pick5.seed" output="slice7"/>
+            <conn input="color7.color" output="pick8"/>
+            <conn input="color8.color" output="pick7"/>
+            <conn input="color5.color" output="pick6"/>
+            <conn input="color6.color" output="pick5"/>
+        </node>
+        <node name="SELETOR2" position="40.00,-27.00" prototype="core.network">
+            <node name="color5" position="33.00,-28.00" prototype="color.color"/>
+            <node name="color6" position="37.00,-28.00" prototype="color.color"/>
+            <node name="color7" position="25.00,-28.00" prototype="color.color"/>
+            <node name="color8" position="29.00,-28.00" prototype="color.color"/>
+            <node name="cull5" position="25.00,-30.00" prototype="list.cull"/>
+            <node name="cull6" position="33.00,-30.00" prototype="list.cull"/>
+            <node name="cull7" position="29.00,-30.00" prototype="list.cull"/>
+            <node name="cull8" position="37.00,-30.00" prototype="list.cull"/>
+            <node name="equals5" position="37.00,-32.00" prototype="string.equals"/>
+            <node name="equals6" position="33.00,-32.00" prototype="string.equals"/>
+            <node name="equals7" position="29.00,-32.00" prototype="string.equals"/>
+            <node name="equals8" position="25.00,-32.00" prototype="string.equals"/>
+            <node name="import_svg2" position="25.00,-37.00" prototype="corevector.import_svg">
+                <port name="file" type="string" value="paleta.svg"/>
+            </node>
+            <node name="logical5" position="37.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical6" position="33.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical7" position="29.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical8" position="25.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="lookup2" position="25.00,-35.00" prototype="data.lookup">
+                <port name="key" type="string" value="fill"/>
+            </node>
+            <node name="pick5" position="37.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="7"/>
+            </node>
+            <node name="pick6" position="33.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="7"/>
+            </node>
+            <node name="pick7" position="29.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="9"/>
+            </node>
+            <node name="pick8" position="25.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+            </node>
+            <node name="random_numbers2" position="29.00,-37.00" prototype="math.random_numbers">
+                <port name="amount" type="int" value="4"/>
+                <port name="seed" type="int" value="3"/>
+            </node>
+            <node name="slice5" position="29.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="1"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice6" position="33.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="2"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice7" position="37.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="3"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice8" position="25.00,-34.00" prototype="list.slice">
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="ungroup2" position="25.00,-36.00" prototype="corevector.ungroup"/>
+            <port childReference="random_numbers2.seed" description="" label="" name="seed" range="value" type="int" value="3" widget="int"/>
+            <conn input="ungroup2.shape" output="import_svg2"/>
+            <conn input="lookup2.list" output="ungroup2"/>
+            <conn input="pick8.list" output="lookup2"/>
+            <conn input="equals8.string" output="lookup2"/>
+            <conn input="equals8.equals" output="pick8"/>
+            <conn input="cull5.list" output="lookup2"/>
+            <conn input="logical8.boolean1" output="equals8"/>
+            <conn input="cull5.booleans" output="logical8"/>
+            <conn input="equals7.equals" output="pick7"/>
+            <conn input="logical7.boolean1" output="equals7"/>
+            <conn input="pick7.list" output="cull5"/>
+            <conn input="equals7.string" output="cull5"/>
+            <conn input="cull7.list" output="cull5"/>
+            <conn input="cull7.booleans" output="logical7"/>
+            <conn input="equals6.equals" output="pick6"/>
+            <conn input="logical6.boolean1" output="equals6"/>
+            <conn input="cull6.booleans" output="logical6"/>
+            <conn input="equals6.string" output="cull7"/>
+            <conn input="cull6.list" output="cull7"/>
+            <conn input="pick6.list" output="cull7"/>
+            <conn input="equals5.equals" output="pick5"/>
+            <conn input="logical5.boolean1" output="equals5"/>
+            <conn input="cull8.booleans" output="logical5"/>
+            <conn input="pick5.list" output="cull6"/>
+            <conn input="equals5.string" output="cull6"/>
+            <conn input="cull8.list" output="cull6"/>
+            <conn input="slice8.list" output="random_numbers2"/>
+            <conn input="pick8.seed" output="slice8"/>
+            <conn input="slice5.list" output="random_numbers2"/>
+            <conn input="pick7.seed" output="slice5"/>
+            <conn input="slice6.list" output="random_numbers2"/>
+            <conn input="pick6.seed" output="slice6"/>
+            <conn input="slice7.list" output="random_numbers2"/>
+            <conn input="pick5.seed" output="slice7"/>
+            <conn input="color7.color" output="pick8"/>
+            <conn input="color8.color" output="pick7"/>
+            <conn input="color5.color" output="pick6"/>
+            <conn input="color6.color" output="pick5"/>
+        </node>
+        <node name="SELETOR3" position="43.00,-27.00" prototype="core.network">
+            <node name="color5" position="33.00,-28.00" prototype="color.color"/>
+            <node name="color6" position="37.00,-28.00" prototype="color.color"/>
+            <node name="color7" position="25.00,-28.00" prototype="color.color"/>
+            <node name="color8" position="29.00,-28.00" prototype="color.color"/>
+            <node name="cull5" position="25.00,-30.00" prototype="list.cull"/>
+            <node name="cull6" position="33.00,-30.00" prototype="list.cull"/>
+            <node name="cull7" position="29.00,-30.00" prototype="list.cull"/>
+            <node name="cull8" position="37.00,-30.00" prototype="list.cull"/>
+            <node name="equals5" position="37.00,-32.00" prototype="string.equals"/>
+            <node name="equals6" position="33.00,-32.00" prototype="string.equals"/>
+            <node name="equals7" position="29.00,-32.00" prototype="string.equals"/>
+            <node name="equals8" position="25.00,-32.00" prototype="string.equals"/>
+            <node name="import_svg2" position="25.00,-37.00" prototype="corevector.import_svg">
+                <port name="file" type="string" value="paleta.svg"/>
+            </node>
+            <node name="logical5" position="37.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical6" position="33.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical7" position="29.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical8" position="25.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="lookup2" position="25.00,-35.00" prototype="data.lookup">
+                <port name="key" type="string" value="fill"/>
+            </node>
+            <node name="pick5" position="37.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="7"/>
+            </node>
+            <node name="pick6" position="33.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="7"/>
+            </node>
+            <node name="pick7" position="29.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="9"/>
+            </node>
+            <node name="pick8" position="25.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+            </node>
+            <node name="random_numbers2" position="29.00,-37.00" prototype="math.random_numbers">
+                <port name="amount" type="int" value="4"/>
+                <port name="seed" type="int" value="3"/>
+            </node>
+            <node name="slice5" position="29.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="1"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice6" position="33.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="2"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice7" position="37.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="3"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice8" position="25.00,-34.00" prototype="list.slice">
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="ungroup2" position="25.00,-36.00" prototype="corevector.ungroup"/>
+            <port childReference="random_numbers2.seed" description="" label="" name="seed" range="value" type="int" value="3" widget="int"/>
+            <conn input="ungroup2.shape" output="import_svg2"/>
+            <conn input="lookup2.list" output="ungroup2"/>
+            <conn input="pick8.list" output="lookup2"/>
+            <conn input="equals8.string" output="lookup2"/>
+            <conn input="equals8.equals" output="pick8"/>
+            <conn input="cull5.list" output="lookup2"/>
+            <conn input="logical8.boolean1" output="equals8"/>
+            <conn input="cull5.booleans" output="logical8"/>
+            <conn input="equals7.equals" output="pick7"/>
+            <conn input="logical7.boolean1" output="equals7"/>
+            <conn input="pick7.list" output="cull5"/>
+            <conn input="equals7.string" output="cull5"/>
+            <conn input="cull7.list" output="cull5"/>
+            <conn input="cull7.booleans" output="logical7"/>
+            <conn input="equals6.equals" output="pick6"/>
+            <conn input="logical6.boolean1" output="equals6"/>
+            <conn input="cull6.booleans" output="logical6"/>
+            <conn input="equals6.string" output="cull7"/>
+            <conn input="cull6.list" output="cull7"/>
+            <conn input="pick6.list" output="cull7"/>
+            <conn input="equals5.equals" output="pick5"/>
+            <conn input="logical5.boolean1" output="equals5"/>
+            <conn input="cull8.booleans" output="logical5"/>
+            <conn input="pick5.list" output="cull6"/>
+            <conn input="equals5.string" output="cull6"/>
+            <conn input="cull8.list" output="cull6"/>
+            <conn input="slice8.list" output="random_numbers2"/>
+            <conn input="pick8.seed" output="slice8"/>
+            <conn input="slice5.list" output="random_numbers2"/>
+            <conn input="pick7.seed" output="slice5"/>
+            <conn input="slice6.list" output="random_numbers2"/>
+            <conn input="pick6.seed" output="slice6"/>
+            <conn input="slice7.list" output="random_numbers2"/>
+            <conn input="pick5.seed" output="slice7"/>
+            <conn input="color7.color" output="pick8"/>
+            <conn input="color8.color" output="pick7"/>
+            <conn input="color5.color" output="pick6"/>
+            <conn input="color6.color" output="pick5"/>
+        </node>
+        <node name="SELETOR4" position="46.00,-27.00" prototype="core.network">
+            <node name="color5" position="33.00,-28.00" prototype="color.color"/>
+            <node name="color6" position="37.00,-28.00" prototype="color.color"/>
+            <node name="color7" position="25.00,-28.00" prototype="color.color"/>
+            <node name="color8" position="29.00,-28.00" prototype="color.color"/>
+            <node name="cull5" position="25.00,-30.00" prototype="list.cull"/>
+            <node name="cull6" position="33.00,-30.00" prototype="list.cull"/>
+            <node name="cull7" position="29.00,-30.00" prototype="list.cull"/>
+            <node name="cull8" position="37.00,-30.00" prototype="list.cull"/>
+            <node name="equals5" position="37.00,-32.00" prototype="string.equals"/>
+            <node name="equals6" position="33.00,-32.00" prototype="string.equals"/>
+            <node name="equals7" position="29.00,-32.00" prototype="string.equals"/>
+            <node name="equals8" position="25.00,-32.00" prototype="string.equals"/>
+            <node name="import_svg2" position="25.00,-37.00" prototype="corevector.import_svg">
+                <port name="file" type="string" value="paleta.svg"/>
+            </node>
+            <node name="logical5" position="37.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical6" position="33.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical7" position="29.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical8" position="25.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="lookup2" position="25.00,-35.00" prototype="data.lookup">
+                <port name="key" type="string" value="fill"/>
+            </node>
+            <node name="pick5" position="37.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="7"/>
+            </node>
+            <node name="pick6" position="33.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="7"/>
+            </node>
+            <node name="pick7" position="29.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="9"/>
+            </node>
+            <node name="pick8" position="25.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+            </node>
+            <node name="random_numbers2" position="29.00,-37.00" prototype="math.random_numbers">
+                <port name="amount" type="int" value="4"/>
+                <port name="seed" type="int" value="3"/>
+            </node>
+            <node name="slice5" position="29.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="1"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice6" position="33.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="2"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice7" position="37.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="3"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice8" position="25.00,-34.00" prototype="list.slice">
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="ungroup2" position="25.00,-36.00" prototype="corevector.ungroup"/>
+            <port childReference="random_numbers2.seed" description="" label="" name="seed" range="value" type="int" value="3" widget="int"/>
+            <conn input="ungroup2.shape" output="import_svg2"/>
+            <conn input="lookup2.list" output="ungroup2"/>
+            <conn input="pick8.list" output="lookup2"/>
+            <conn input="equals8.string" output="lookup2"/>
+            <conn input="equals8.equals" output="pick8"/>
+            <conn input="cull5.list" output="lookup2"/>
+            <conn input="logical8.boolean1" output="equals8"/>
+            <conn input="cull5.booleans" output="logical8"/>
+            <conn input="equals7.equals" output="pick7"/>
+            <conn input="logical7.boolean1" output="equals7"/>
+            <conn input="pick7.list" output="cull5"/>
+            <conn input="equals7.string" output="cull5"/>
+            <conn input="cull7.list" output="cull5"/>
+            <conn input="cull7.booleans" output="logical7"/>
+            <conn input="equals6.equals" output="pick6"/>
+            <conn input="logical6.boolean1" output="equals6"/>
+            <conn input="cull6.booleans" output="logical6"/>
+            <conn input="equals6.string" output="cull7"/>
+            <conn input="cull6.list" output="cull7"/>
+            <conn input="pick6.list" output="cull7"/>
+            <conn input="equals5.equals" output="pick5"/>
+            <conn input="logical5.boolean1" output="equals5"/>
+            <conn input="cull8.booleans" output="logical5"/>
+            <conn input="pick5.list" output="cull6"/>
+            <conn input="equals5.string" output="cull6"/>
+            <conn input="cull8.list" output="cull6"/>
+            <conn input="slice8.list" output="random_numbers2"/>
+            <conn input="pick8.seed" output="slice8"/>
+            <conn input="slice5.list" output="random_numbers2"/>
+            <conn input="pick7.seed" output="slice5"/>
+            <conn input="slice6.list" output="random_numbers2"/>
+            <conn input="pick6.seed" output="slice6"/>
+            <conn input="slice7.list" output="random_numbers2"/>
+            <conn input="pick5.seed" output="slice7"/>
+            <conn input="color7.color" output="pick8"/>
+            <conn input="color8.color" output="pick7"/>
+            <conn input="color5.color" output="pick6"/>
+            <conn input="color6.color" output="pick5"/>
+        </node>
+        <node name="SELETOR5" position="50.00,-27.00" prototype="core.network">
+            <node name="color5" position="33.00,-28.00" prototype="color.color"/>
+            <node name="color6" position="37.00,-28.00" prototype="color.color"/>
+            <node name="color7" position="25.00,-28.00" prototype="color.color"/>
+            <node name="color8" position="29.00,-28.00" prototype="color.color"/>
+            <node name="cull5" position="25.00,-30.00" prototype="list.cull"/>
+            <node name="cull6" position="33.00,-30.00" prototype="list.cull"/>
+            <node name="cull7" position="29.00,-30.00" prototype="list.cull"/>
+            <node name="cull8" position="37.00,-30.00" prototype="list.cull"/>
+            <node name="equals5" position="37.00,-32.00" prototype="string.equals"/>
+            <node name="equals6" position="33.00,-32.00" prototype="string.equals"/>
+            <node name="equals7" position="29.00,-32.00" prototype="string.equals"/>
+            <node name="equals8" position="25.00,-32.00" prototype="string.equals"/>
+            <node name="import_svg2" position="25.00,-37.00" prototype="corevector.import_svg">
+                <port name="file" type="string" value="paleta.svg"/>
+            </node>
+            <node name="logical5" position="37.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical6" position="33.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical7" position="29.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical8" position="25.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="lookup2" position="25.00,-35.00" prototype="data.lookup">
+                <port name="key" type="string" value="fill"/>
+            </node>
+            <node name="pick5" position="37.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="7"/>
+            </node>
+            <node name="pick6" position="33.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="7"/>
+            </node>
+            <node name="pick7" position="29.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="9"/>
+            </node>
+            <node name="pick8" position="25.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+            </node>
+            <node name="random_numbers2" position="29.00,-37.00" prototype="math.random_numbers">
+                <port name="amount" type="int" value="4"/>
+                <port name="seed" type="int" value="3"/>
+            </node>
+            <node name="slice5" position="29.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="1"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice6" position="33.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="2"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice7" position="37.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="3"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice8" position="25.00,-34.00" prototype="list.slice">
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="ungroup2" position="25.00,-36.00" prototype="corevector.ungroup"/>
+            <port childReference="random_numbers2.seed" description="" label="" name="seed" range="value" type="int" value="3" widget="int"/>
+            <conn input="ungroup2.shape" output="import_svg2"/>
+            <conn input="lookup2.list" output="ungroup2"/>
+            <conn input="pick8.list" output="lookup2"/>
+            <conn input="equals8.string" output="lookup2"/>
+            <conn input="equals8.equals" output="pick8"/>
+            <conn input="cull5.list" output="lookup2"/>
+            <conn input="logical8.boolean1" output="equals8"/>
+            <conn input="cull5.booleans" output="logical8"/>
+            <conn input="equals7.equals" output="pick7"/>
+            <conn input="logical7.boolean1" output="equals7"/>
+            <conn input="pick7.list" output="cull5"/>
+            <conn input="equals7.string" output="cull5"/>
+            <conn input="cull7.list" output="cull5"/>
+            <conn input="cull7.booleans" output="logical7"/>
+            <conn input="equals6.equals" output="pick6"/>
+            <conn input="logical6.boolean1" output="equals6"/>
+            <conn input="cull6.booleans" output="logical6"/>
+            <conn input="equals6.string" output="cull7"/>
+            <conn input="cull6.list" output="cull7"/>
+            <conn input="pick6.list" output="cull7"/>
+            <conn input="equals5.equals" output="pick5"/>
+            <conn input="logical5.boolean1" output="equals5"/>
+            <conn input="cull8.booleans" output="logical5"/>
+            <conn input="pick5.list" output="cull6"/>
+            <conn input="equals5.string" output="cull6"/>
+            <conn input="cull8.list" output="cull6"/>
+            <conn input="slice8.list" output="random_numbers2"/>
+            <conn input="pick8.seed" output="slice8"/>
+            <conn input="slice5.list" output="random_numbers2"/>
+            <conn input="pick7.seed" output="slice5"/>
+            <conn input="slice6.list" output="random_numbers2"/>
+            <conn input="pick6.seed" output="slice6"/>
+            <conn input="slice7.list" output="random_numbers2"/>
+            <conn input="pick5.seed" output="slice7"/>
+            <conn input="color7.color" output="pick8"/>
+            <conn input="color8.color" output="pick7"/>
+            <conn input="color5.color" output="pick6"/>
+            <conn input="color6.color" output="pick5"/>
+        </node>
+        <node name="SELETOR6" position="52.00,-27.00" prototype="core.network">
+            <node name="color5" position="33.00,-28.00" prototype="color.color"/>
+            <node name="color6" position="37.00,-28.00" prototype="color.color"/>
+            <node name="color7" position="25.00,-28.00" prototype="color.color"/>
+            <node name="color8" position="29.00,-28.00" prototype="color.color"/>
+            <node name="cull5" position="25.00,-30.00" prototype="list.cull"/>
+            <node name="cull6" position="33.00,-30.00" prototype="list.cull"/>
+            <node name="cull7" position="29.00,-30.00" prototype="list.cull"/>
+            <node name="cull8" position="37.00,-30.00" prototype="list.cull"/>
+            <node name="equals5" position="37.00,-32.00" prototype="string.equals"/>
+            <node name="equals6" position="33.00,-32.00" prototype="string.equals"/>
+            <node name="equals7" position="29.00,-32.00" prototype="string.equals"/>
+            <node name="equals8" position="25.00,-32.00" prototype="string.equals"/>
+            <node name="import_svg2" position="25.00,-37.00" prototype="corevector.import_svg">
+                <port name="file" type="string" value="paleta.svg"/>
+            </node>
+            <node name="logical5" position="37.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical6" position="33.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical7" position="29.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical8" position="25.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="lookup2" position="25.00,-35.00" prototype="data.lookup">
+                <port name="key" type="string" value="fill"/>
+            </node>
+            <node name="pick5" position="37.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="7"/>
+            </node>
+            <node name="pick6" position="33.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="7"/>
+            </node>
+            <node name="pick7" position="29.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="9"/>
+            </node>
+            <node name="pick8" position="25.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+            </node>
+            <node name="random_numbers2" position="29.00,-37.00" prototype="math.random_numbers">
+                <port name="amount" type="int" value="4"/>
+                <port name="seed" type="int" value="3"/>
+            </node>
+            <node name="slice5" position="29.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="1"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice6" position="33.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="2"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice7" position="37.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="3"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice8" position="25.00,-34.00" prototype="list.slice">
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="ungroup2" position="25.00,-36.00" prototype="corevector.ungroup"/>
+            <port childReference="random_numbers2.seed" description="" label="" name="seed" range="value" type="int" value="3" widget="int"/>
+            <conn input="ungroup2.shape" output="import_svg2"/>
+            <conn input="lookup2.list" output="ungroup2"/>
+            <conn input="pick8.list" output="lookup2"/>
+            <conn input="equals8.string" output="lookup2"/>
+            <conn input="equals8.equals" output="pick8"/>
+            <conn input="cull5.list" output="lookup2"/>
+            <conn input="logical8.boolean1" output="equals8"/>
+            <conn input="cull5.booleans" output="logical8"/>
+            <conn input="equals7.equals" output="pick7"/>
+            <conn input="logical7.boolean1" output="equals7"/>
+            <conn input="pick7.list" output="cull5"/>
+            <conn input="equals7.string" output="cull5"/>
+            <conn input="cull7.list" output="cull5"/>
+            <conn input="cull7.booleans" output="logical7"/>
+            <conn input="equals6.equals" output="pick6"/>
+            <conn input="logical6.boolean1" output="equals6"/>
+            <conn input="cull6.booleans" output="logical6"/>
+            <conn input="equals6.string" output="cull7"/>
+            <conn input="cull6.list" output="cull7"/>
+            <conn input="pick6.list" output="cull7"/>
+            <conn input="equals5.equals" output="pick5"/>
+            <conn input="logical5.boolean1" output="equals5"/>
+            <conn input="cull8.booleans" output="logical5"/>
+            <conn input="pick5.list" output="cull6"/>
+            <conn input="equals5.string" output="cull6"/>
+            <conn input="cull8.list" output="cull6"/>
+            <conn input="slice8.list" output="random_numbers2"/>
+            <conn input="pick8.seed" output="slice8"/>
+            <conn input="slice5.list" output="random_numbers2"/>
+            <conn input="pick7.seed" output="slice5"/>
+            <conn input="slice6.list" output="random_numbers2"/>
+            <conn input="pick6.seed" output="slice6"/>
+            <conn input="slice7.list" output="random_numbers2"/>
+            <conn input="pick5.seed" output="slice7"/>
+            <conn input="color7.color" output="pick8"/>
+            <conn input="color8.color" output="pick7"/>
+            <conn input="color5.color" output="pick6"/>
+            <conn input="color6.color" output="pick5"/>
+        </node>
+        <node name="SELETOR7" position="54.00,-26.00" prototype="core.network">
+            <node name="color5" position="33.00,-28.00" prototype="color.color"/>
+            <node name="color6" position="37.00,-28.00" prototype="color.color"/>
+            <node name="color7" position="25.00,-28.00" prototype="color.color"/>
+            <node name="color8" position="29.00,-28.00" prototype="color.color"/>
+            <node name="cull5" position="25.00,-30.00" prototype="list.cull"/>
+            <node name="cull6" position="33.00,-30.00" prototype="list.cull"/>
+            <node name="cull7" position="29.00,-30.00" prototype="list.cull"/>
+            <node name="cull8" position="37.00,-30.00" prototype="list.cull"/>
+            <node name="equals5" position="37.00,-32.00" prototype="string.equals"/>
+            <node name="equals6" position="33.00,-32.00" prototype="string.equals"/>
+            <node name="equals7" position="29.00,-32.00" prototype="string.equals"/>
+            <node name="equals8" position="25.00,-32.00" prototype="string.equals"/>
+            <node name="import_svg2" position="25.00,-37.00" prototype="corevector.import_svg">
+                <port name="file" type="string" value="paleta.svg"/>
+            </node>
+            <node name="logical5" position="37.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical6" position="33.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical7" position="29.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="logical8" position="25.00,-31.00" prototype="math.logical">
+                <port name="boolean2" type="boolean" value="true"/>
+                <port name="comparator" type="string" value="xor"/>
+            </node>
+            <node name="lookup2" position="25.00,-35.00" prototype="data.lookup">
+                <port name="key" type="string" value="fill"/>
+            </node>
+            <node name="pick5" position="37.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="7"/>
+            </node>
+            <node name="pick6" position="33.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="7"/>
+            </node>
+            <node name="pick7" position="29.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+                <port name="seed" type="int" value="9"/>
+            </node>
+            <node name="pick8" position="25.00,-33.00" prototype="list.pick">
+                <port name="amount" type="int" value="1"/>
+            </node>
+            <node name="random_numbers2" position="29.00,-37.00" prototype="math.random_numbers">
+                <port name="amount" type="int" value="4"/>
+                <port name="seed" type="int" value="3"/>
+            </node>
+            <node name="slice5" position="29.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="1"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice6" position="33.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="2"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice7" position="37.00,-34.00" prototype="list.slice">
+                <port name="start_index" type="int" value="3"/>
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="slice8" position="25.00,-34.00" prototype="list.slice">
+                <port name="size" type="int" value="1"/>
+            </node>
+            <node name="ungroup2" position="25.00,-36.00" prototype="corevector.ungroup"/>
+            <port childReference="random_numbers2.seed" description="" label="" name="seed" range="value" type="int" value="3" widget="int"/>
+            <conn input="ungroup2.shape" output="import_svg2"/>
+            <conn input="lookup2.list" output="ungroup2"/>
+            <conn input="pick8.list" output="lookup2"/>
+            <conn input="equals8.string" output="lookup2"/>
+            <conn input="equals8.equals" output="pick8"/>
+            <conn input="cull5.list" output="lookup2"/>
+            <conn input="logical8.boolean1" output="equals8"/>
+            <conn input="cull5.booleans" output="logical8"/>
+            <conn input="equals7.equals" output="pick7"/>
+            <conn input="logical7.boolean1" output="equals7"/>
+            <conn input="pick7.list" output="cull5"/>
+            <conn input="equals7.string" output="cull5"/>
+            <conn input="cull7.list" output="cull5"/>
+            <conn input="cull7.booleans" output="logical7"/>
+            <conn input="equals6.equals" output="pick6"/>
+            <conn input="logical6.boolean1" output="equals6"/>
+            <conn input="cull6.booleans" output="logical6"/>
+            <conn input="equals6.string" output="cull7"/>
+            <conn input="cull6.list" output="cull7"/>
+            <conn input="pick6.list" output="cull7"/>
+            <conn input="equals5.equals" output="pick5"/>
+            <conn input="logical5.boolean1" output="equals5"/>
+            <conn input="cull8.booleans" output="logical5"/>
+            <conn input="pick5.list" output="cull6"/>
+            <conn input="equals5.string" output="cull6"/>
+            <conn input="cull8.list" output="cull6"/>
+            <conn input="slice8.list" output="random_numbers2"/>
+            <conn input="pick8.seed" output="slice8"/>
+            <conn input="slice5.list" output="random_numbers2"/>
+            <conn input="pick7.seed" output="slice5"/>
+            <conn input="slice6.list" output="random_numbers2"/>
+            <conn input="pick6.seed" output="slice6"/>
+            <conn input="slice7.list" output="random_numbers2"/>
+            <conn input="pick5.seed" output="slice7"/>
+            <conn input="color7.color" output="pick8"/>
+            <conn input="color8.color" output="pick7"/>
+            <conn input="color5.color" output="pick6"/>
+            <conn input="color6.color" output="pick5"/>
+        </node>
+        <node name="add1" position="6.00,-4.00" prototype="math.add">
+            <port name="value2" type="float" value="225.0"/>
+        </node>
+        <node name="add2" position="3.00,-4.00" prototype="math.add">
+            <port name="value2" type="float" value="75.0"/>
+        </node>
+        <node name="add3" position="37.00,-9.00" prototype="math.add">
+            <port name="value2" type="float" value="149.9"/>
+        </node>
+        <node name="add4" position="28.00,-3.00" prototype="math.add">
+            <port name="value2" type="float" value="-25.0"/>
+        </node>
+        <node name="add5" position="31.00,-3.00" prototype="math.add">
+            <port name="value2" type="float" value="241.0"/>
+        </node>
+        <node name="color1" position="35.00,-14.00" prototype="color.color"/>
+        <node name="color2" position="39.00,-14.00" prototype="color.color"/>
+        <node name="color3" position="43.00,-14.00" prototype="color.color"/>
+        <node name="color4" position="47.00,-14.00" prototype="color.color"/>
+        <node name="colorize1" position="3.00,4.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ff6363ff"/>
+        </node>
+        <node name="colorize10" position="26.00,4.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#ff00ffff"/>
+        </node>
+        <node name="colorize2" position="6.00,4.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#54ff54ff"/>
+        </node>
+        <node name="colorize3" position="10.00,5.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#00ffffff"/>
+        </node>
+        <node name="colorize4" position="-1.00,13.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#0000ffff"/>
+        </node>
+        <node name="colorize5" position="19.00,-4.00" prototype="corevector.colorize"/>
+        <node name="colorize8" position="18.00,9.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#0000ffff"/>
+        </node>
+        <node name="colorize9" position="23.00,-4.00" prototype="corevector.colorize">
+            <port name="fill" type="color" value="#54ff54ff"/>
+        </node>
+        <node name="combine1" position="5.00,8.00" prototype="list.combine"/>
+        <node name="combine2" position="5.00,15.00" prototype="list.combine"/>
+        <node name="combine3" position="21.00,11.00" prototype="list.combine"/>
+        <node name="combine5" position="21.00,6.00" prototype="list.combine"/>
+        <node name="compound1" position="10.00,4.00" prototype="corevector.compound">
+            <port name="function" type="string" value="intersected"/>
+        </node>
+        <node name="compound3" position="26.00,3.00" prototype="corevector.compound">
+            <port name="function" type="string" value="intersected"/>
+        </node>
+        <node name="copy1" position="19.00,-6.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="3"/>
+            <port name="translate" type="point" value="960.00,0.00"/>
+        </node>
+        <node name="copy3" position="23.00,-6.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="3"/>
+            <port name="translate" type="point" value="960.00,0.00"/>
+        </node>
+        <node name="cull1" position="35.00,-16.00" prototype="list.cull"/>
+        <node name="cull2" position="39.00,-16.00" prototype="list.cull"/>
+        <node name="cull3" position="43.00,-16.00" prototype="list.cull"/>
+        <node name="cull4" position="47.00,-16.00" prototype="list.cull"/>
+        <node name="divide2" position="26.00,-14.00" prototype="math.divide">
+            <port name="value2" type="float" value="2.0"/>
+        </node>
+        <node name="equals1" position="35.00,-18.00" prototype="string.equals"/>
+        <node name="equals2" position="39.00,-18.00" prototype="string.equals"/>
+        <node name="equals3" position="43.00,-18.00" prototype="string.equals"/>
+        <node name="equals4" position="47.00,-18.00" prototype="string.equals"/>
+        <node name="fit1" position="19.00,-7.00" prototype="corevector.fit">
+            <port name="width" type="float" value="960.0"/>
+            <port name="height" type="float" value="1080.0"/>
+            <port name="keep_proportions" type="boolean" value="false"/>
+        </node>
+        <node name="fit2" position="23.00,-7.00" prototype="corevector.fit">
+            <port name="width" type="float" value="960.0"/>
+            <port name="height" type="float" value="1080.0"/>
+            <port name="keep_proportions" type="boolean" value="false"/>
+        </node>
+        <node name="frame1" position="7.00,-7.00" prototype="core.frame"/>
+        <node name="frame2" position="36.00,-11.00" prototype="core.frame"/>
+        <node name="group1" position="19.00,-5.00" prototype="corevector.group"/>
+        <node name="group3" position="23.00,-5.00" prototype="corevector.group"/>
+        <node name="import_svg1" position="35.00,-23.00" prototype="corevector.import_svg">
+            <port name="file" type="string" value="paleta.svg"/>
+        </node>
+        <node name="integer1" position="19.00,-24.00" prototype="math.integer">
+            <port name="value" type="int" value="4"/>
+        </node>
+        <node name="largura" position="22.00,-15.00" prototype="math.divide">
+            <port name="value1" type="float" value="1920.0"/>
+        </node>
+        <node name="logical1" position="35.00,-17.00" prototype="math.logical">
+            <port name="boolean2" type="boolean" value="true"/>
+            <port name="comparator" type="string" value="xor"/>
+        </node>
+        <node name="logical2" position="39.00,-17.00" prototype="math.logical">
+            <port name="boolean2" type="boolean" value="true"/>
+            <port name="comparator" type="string" value="xor"/>
+        </node>
+        <node name="logical3" position="43.00,-17.00" prototype="math.logical">
+            <port name="boolean2" type="boolean" value="true"/>
+            <port name="comparator" type="string" value="xor"/>
+        </node>
+        <node name="logical4" position="47.00,-17.00" prototype="math.logical">
+            <port name="boolean2" type="boolean" value="true"/>
+            <port name="comparator" type="string" value="xor"/>
+        </node>
+        <node name="lookup1" position="35.00,-21.00" prototype="data.lookup">
+            <port name="key" type="string" value="fill"/>
+        </node>
+        <node name="make_point1" position="3.00,1.00" prototype="corevector.make_point">
+            <port name="y" type="float" value="180.0"/>
+        </node>
+        <node name="make_point2" position="6.00,1.00" prototype="corevector.make_point">
+            <port name="y" type="float" value="180.0"/>
+        </node>
+        <node name="make_point3" position="22.00,-13.00" prototype="corevector.make_point"/>
+        <node name="make_point5" position="28.00,-2.00" prototype="corevector.make_point"/>
+        <node name="make_point6" position="31.00,-2.00" prototype="corevector.make_point"/>
+        <node name="nCopias" position="19.00,-15.00" prototype="math.add">
+            <port name="value2" type="float" value="1.0"/>
+        </node>
+        <node name="negate1" position="31.00,-4.00" prototype="math.negate"/>
+        <node name="negate2" position="26.00,-13.00" prototype="math.negate"/>
+        <node name="number1" position="10.00,-4.00" prototype="math.number">
+            <port name="value" type="float" value="300.0"/>
+        </node>
+        <node name="pick1" position="35.00,-19.00" prototype="list.pick">
+            <port name="amount" type="int" value="1"/>
+        </node>
+        <node name="pick2" position="39.00,-19.00" prototype="list.pick">
+            <port name="amount" type="int" value="1"/>
+            <port name="seed" type="int" value="9"/>
+        </node>
+        <node name="pick3" position="43.00,-19.00" prototype="list.pick">
+            <port name="amount" type="int" value="1"/>
+            <port name="seed" type="int" value="7"/>
+        </node>
+        <node name="pick4" position="47.00,-19.00" prototype="list.pick">
+            <port name="amount" type="int" value="1"/>
+            <port name="seed" type="int" value="7"/>
+        </node>
+        <node name="polygon1" position="3.00,2.00" prototype="corevector.polygon">
+            <port name="position" type="point" value="0.00,180.00"/>
+            <port name="radius" type="float" value="720.0"/>
+            <port name="align" type="boolean" value="true"/>
+        </node>
+        <node name="polygon2" position="6.00,2.00" prototype="corevector.polygon">
+            <port name="position" type="point" value="0.00,180.00"/>
+            <port name="radius" type="float" value="720.0"/>
+            <port name="align" type="boolean" value="true"/>
+        </node>
+        <node name="polygon3" position="10.00,2.00" prototype="corevector.polygon">
+            <port name="position" type="point" value="0.00,180.00"/>
+            <port name="radius" type="float" value="720.0"/>
+            <port name="align" type="boolean" value="true"/>
+        </node>
+        <node name="polygon6" position="19.00,-8.00" prototype="corevector.polygon">
+            <port name="position" type="point" value="0.00,180.00"/>
+            <port name="radius" type="float" value="720.0"/>
+            <port name="align" type="boolean" value="true"/>
+        </node>
+        <node name="polygon7" position="23.00,-8.00" prototype="corevector.polygon">
+            <port name="position" type="point" value="0.00,180.00"/>
+            <port name="radius" type="float" value="720.0"/>
+            <port name="align" type="boolean" value="true"/>
+        </node>
+        <node name="random_numbers1" position="39.00,-23.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="4"/>
+            <port name="seed" type="int" value="3"/>
+        </node>
+        <node name="rect1" position="-1.00,12.00" prototype="corevector.rect">
+            <port name="width" type="float" value="1920.0"/>
+            <port name="height" type="float" value="1080.0"/>
+        </node>
+        <node name="rect2" position="18.00,8.00" prototype="corevector.rect">
+            <port name="position" type="point" value="960.00,0.00"/>
+            <port name="width" type="float" value="1920.0"/>
+            <port name="height" type="float" value="1080.0"/>
+        </node>
+        <node name="slice1" position="35.00,-20.00" prototype="list.slice">
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice2" position="39.00,-20.00" prototype="list.slice">
+            <port name="start_index" type="int" value="1"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice3" position="43.00,-20.00" prototype="list.slice">
+            <port name="start_index" type="int" value="2"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice4" position="47.00,-20.00" prototype="list.slice">
+            <port name="start_index" type="int" value="3"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="translate1" position="19.00,1.00" prototype="corevector.translate">
+            <port name="translate" type="point" value="-959.00,0.00"/>
+        </node>
+        <node name="translate2" position="23.00,1.00" prototype="corevector.translate"/>
+        <node name="ungroup1" position="35.00,-22.00" prototype="corevector.ungroup"/>
+        <node name="wave1" position="3.00,-1.00" prototype="math.wave">
+            <port name="min" type="float" value="-960.0"/>
+            <port name="max" type="float" value="960.0"/>
+            <port name="period" type="float" value="100.0"/>
+            <port name="offset" type="float" value="75.0"/>
+        </node>
+        <node name="wave2" position="6.00,-1.00" prototype="math.wave">
+            <port name="min" type="float" value="-960.0"/>
+            <port name="max" type="float" value="960.0"/>
+            <port name="period" type="float" value="100.0"/>
+            <port name="offset" type="float" value="75.0"/>
+        </node>
+        <node name="wave3" position="28.00,-5.00" prototype="math.wave">
+            <port name="max" type="float" value="-960.0"/>
+            <port name="period" type="float" value="25.0"/>
+            <port name="offset" type="float" value="75.0"/>
+            <port name="type" type="string" value="sawtooth"/>
+        </node>
+        <conn input="polygon1.position" output="make_point1"/>
+        <conn input="wave1.offset" output="add2"/>
+        <conn input="wave2.offset" output="add1"/>
+        <conn input="make_point2.x" output="wave2"/>
+        <conn input="make_point1.x" output="wave1"/>
+        <conn input="polygon2.position" output="make_point2"/>
+        <conn input="add2.value1" output="frame1"/>
+        <conn input="add1.value1" output="frame1"/>
+        <conn input="polygon3.position" output="make_point2"/>
+        <conn input="compound1.shape1" output="polygon1"/>
+        <conn input="compound1.shape2" output="polygon2"/>
+        <conn input="colorize1.shape" output="polygon1"/>
+        <conn input="colorize2.shape" output="polygon2"/>
+        <conn input="combine1.list1" output="colorize1"/>
+        <conn input="combine1.list2" output="colorize2"/>
+        <conn input="colorize3.shape" output="compound1"/>
+        <conn input="combine1.list3" output="colorize3"/>
+        <conn input="colorize4.shape" output="rect1"/>
+        <conn input="combine2.list1" output="colorize4"/>
+        <conn input="combine2.list2" output="combine1"/>
+        <conn input="wave2.period" output="number1"/>
+        <conn input="wave1.period" output="number1"/>
+        <conn input="add3.value1" output="frame2"/>
+        <conn input="colorize8.shape" output="rect2"/>
+        <conn input="group1.shapes" output="copy1"/>
+        <conn input="fit1.shape" output="polygon6"/>
+        <conn input="copy1.shape" output="fit1"/>
+        <conn input="colorize5.shape" output="group1"/>
+        <conn input="group3.shapes" output="copy3"/>
+        <conn input="fit2.shape" output="polygon7"/>
+        <conn input="copy3.shape" output="fit2"/>
+        <conn input="colorize9.shape" output="group3"/>
+        <conn input="colorize10.shape" output="compound3"/>
+        <conn input="translate2.shape" output="colorize9"/>
+        <conn input="translate1.shape" output="colorize5"/>
+        <conn input="combine5.list1" output="translate1"/>
+        <conn input="combine5.list2" output="translate2"/>
+        <conn input="combine5.list3" output="colorize10"/>
+        <conn input="combine3.list1" output="colorize8"/>
+        <conn input="combine3.list2" output="combine5"/>
+        <conn input="compound3.shape1" output="translate1"/>
+        <conn input="compound3.shape2" output="translate2"/>
+        <conn input="negate1.value" output="wave3"/>
+        <conn input="translate1.translate" output="make_point5"/>
+        <conn input="translate2.translate" output="make_point6"/>
+        <conn input="wave3.offset" output="frame2"/>
+        <conn input="nCopias.value1" output="integer1"/>
+        <conn input="copy1.copies" output="nCopias"/>
+        <conn input="copy3.copies" output="nCopias"/>
+        <conn input="largura.value2" output="integer1"/>
+        <conn input="fit1.width" output="largura"/>
+        <conn input="fit2.width" output="largura"/>
+        <conn input="divide2.value1" output="largura"/>
+        <conn input="negate2.value" output="divide2"/>
+        <conn input="make_point3.x" output="largura"/>
+        <conn input="copy1.translate" output="make_point3"/>
+        <conn input="copy3.translate" output="make_point3"/>
+        <conn input="add4.value1" output="wave3"/>
+        <conn input="make_point5.x" output="add4"/>
+        <conn input="add5.value1" output="negate1"/>
+        <conn input="make_point6.x" output="add5"/>
+        <conn input="wave3.max" output="largura"/>
+        <conn input="add4.value2" output="negate2"/>
+        <conn input="add5.value2" output="divide2"/>
+        <conn input="ungroup1.shape" output="import_svg1"/>
+        <conn input="lookup1.list" output="ungroup1"/>
+        <conn input="pick1.list" output="lookup1"/>
+        <conn input="equals1.string" output="lookup1"/>
+        <conn input="equals1.equals" output="pick1"/>
+        <conn input="cull1.list" output="lookup1"/>
+        <conn input="logical1.boolean1" output="equals1"/>
+        <conn input="cull1.booleans" output="logical1"/>
+        <conn input="equals2.equals" output="pick2"/>
+        <conn input="logical2.boolean1" output="equals2"/>
+        <conn input="pick2.list" output="cull1"/>
+        <conn input="equals2.string" output="cull1"/>
+        <conn input="cull2.list" output="cull1"/>
+        <conn input="cull2.booleans" output="logical2"/>
+        <conn input="equals3.equals" output="pick3"/>
+        <conn input="logical3.boolean1" output="equals3"/>
+        <conn input="cull3.booleans" output="logical3"/>
+        <conn input="equals3.string" output="cull2"/>
+        <conn input="cull3.list" output="cull2"/>
+        <conn input="pick3.list" output="cull2"/>
+        <conn input="equals4.equals" output="pick4"/>
+        <conn input="logical4.boolean1" output="equals4"/>
+        <conn input="cull4.booleans" output="logical4"/>
+        <conn input="pick4.list" output="cull3"/>
+        <conn input="equals4.string" output="cull3"/>
+        <conn input="cull4.list" output="cull3"/>
+        <conn input="slice1.list" output="random_numbers1"/>
+        <conn input="pick1.seed" output="slice1"/>
+        <conn input="slice2.list" output="random_numbers1"/>
+        <conn input="pick2.seed" output="slice2"/>
+        <conn input="slice3.list" output="random_numbers1"/>
+        <conn input="pick3.seed" output="slice3"/>
+        <conn input="slice4.list" output="random_numbers1"/>
+        <conn input="pick4.seed" output="slice4"/>
+        <conn input="color1.color" output="pick1"/>
+        <conn input="color2.color" output="pick2"/>
+        <conn input="color3.color" output="pick3"/>
+        <conn input="color4.color" output="pick4"/>
+        <conn input="colorize5.fill" output="color1"/>
+        <conn input="colorize9.fill" output="color2"/>
+        <conn input="colorize10.fill" output="color3"/>
+        <conn input="colorize8.fill" output="color4"/>
+        <conn input="random_numbers1.seed" output="integer1"/>
+    </node>
+</ndbx>

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ndbx formatVersion="21" type="file" uuid="015bee5f-0b65-492e-be6c-dfad71873adc">
+    <property name="canvasHeight" value="1080"/>
+    <property name="canvasWidth" value="1920"/>
+    <property name="canvasX" value="0"/>
+    <property name="canvasY" value="0"/>
+    <node name="root" prototype="core.network" renderedChild="align1">
+        <node name="Triangulos" position="-3.00,6.00" prototype="core.network" renderedChild="group2">
+            <node name="align1" position="2.00,13.00" prototype="corevector.align">
+                <port name="halign" type="string" value="left"/>
+                <port name="valign" type="string" value="bottom"/>
+            </node>
+            <node name="align2" position="-2.00,9.00" prototype="corevector.align">
+                <port name="halign" type="string" value="left"/>
+                <port name="valign" type="string" value="bottom"/>
+            </node>
+            <node name="colorize1" position="2.00,9.00" prototype="corevector.colorize"/>
+            <node name="colorize4" position="-2.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#ff0000ff"/>
+            </node>
+            <node name="combine1" position="2.00,12.00" prototype="list.combine"/>
+            <node name="connect1" position="2.00,4.00" prototype="corevector.connect"/>
+            <node name="divide1" position="6.00,2.00" prototype="math.divide">
+                <port name="value1" type="float" value="200.0"/>
+                <port name="value2" type="float" value="0.0"/>
+            </node>
+            <node name="fit1" position="2.00,5.00" prototype="corevector.fit">
+                <port name="width" type="float" value="100.0"/>
+                <port name="height" type="float" value="200.0"/>
+                <port name="keep_proportions" type="boolean" value="false"/>
+            </node>
+            <node name="grid1" position="8.00,7.00" prototype="corevector.grid">
+                <port name="columns" type="int" value="2"/>
+                <port name="rows" type="int" value="1"/>
+                <port name="width" type="float" value="200.0"/>
+                <port name="height" type="float" value="0.0"/>
+            </node>
+            <node name="group1" position="2.00,10.00" prototype="corevector.group"/>
+            <node name="group2" position="2.00,14.00" prototype="corevector.group"/>
+            <node name="multiply1" position="9.00,4.00" prototype="math.multiply"/>
+            <node name="nElementos" position="8.00,0.00" prototype="math.number">
+                <port name="value" type="float" value="100.0"/>
+            </node>
+            <node name="point1" position="2.00,2.00" prototype="corevector.point"/>
+            <node name="rect1" position="2.00,1.00" prototype="corevector.rect">
+                <port name="width" type="float" value="200.0"/>
+                <port name="height" type="float" value="200.0"/>
+            </node>
+            <node name="rect3" position="-2.00,8.00" prototype="corevector.rect">
+                <port name="width" type="float" value="200.0"/>
+                <port name="height" type="float" value="200.0"/>
+            </node>
+            <node name="slice1" position="2.00,3.00" prototype="list.slice">
+                <port name="size" type="int" value="3"/>
+            </node>
+            <node name="subtract1" position="9.00,5.00" prototype="math.subtract"/>
+            <node name="translate1" position="2.00,8.00" prototype="corevector.translate"/>
+            <port childReference="nElementos.value" description="" label="" name="nElementos" range="value" type="float" value="100.0" widget="float"/>
+            <port childReference="colorize1.fill" description="The new fill color. Set alpha to 0 for no fill." label="" name="fill" range="value" type="color" value="#000000ff" widget="color"/>
+            <port childReference="colorize4.fill" description="The new fill color. Set alpha to 0 for no fill." label="" name="fill2" range="value" type="color" value="#ff0000ff" widget="color"/>
+            <conn input="point1.value" output="rect1"/>
+            <conn input="slice1.list" output="point1"/>
+            <conn input="connect1.points" output="slice1"/>
+            <conn input="translate1.shape" output="fit1"/>
+            <conn input="translate1.translate" output="grid1"/>
+            <conn input="divide1.value2" output="nElementos"/>
+            <conn input="fit1.width" output="divide1"/>
+            <conn input="multiply1.value2" output="nElementos"/>
+            <conn input="multiply1.value1" output="divide1"/>
+            <conn input="subtract1.value2" output="divide1"/>
+            <conn input="subtract1.value1" output="multiply1"/>
+            <conn input="grid1.width" output="subtract1"/>
+            <conn input="grid1.columns" output="nElementos"/>
+            <conn input="fit1.shape" output="connect1"/>
+            <conn input="colorize1.shape" output="translate1"/>
+            <conn input="group1.shapes" output="colorize1"/>
+            <conn input="align2.shape" output="rect3"/>
+            <conn input="colorize4.shape" output="align2"/>
+            <conn input="align1.shape" output="combine1"/>
+            <conn input="combine1.list2" output="group1"/>
+            <conn input="combine1.list1" output="colorize4"/>
+            <conn input="group2.shapes" output="align1"/>
+        </node>
+        <node name="Triangulos2" position="2.00,6.00" prototype="core.network" renderedChild="group2">
+            <node name="align1" position="2.00,13.00" prototype="corevector.align">
+                <port name="halign" type="string" value="left"/>
+                <port name="valign" type="string" value="bottom"/>
+            </node>
+            <node name="align2" position="-2.00,9.00" prototype="corevector.align">
+                <port name="halign" type="string" value="left"/>
+                <port name="valign" type="string" value="bottom"/>
+            </node>
+            <node name="colorize1" position="2.00,9.00" prototype="corevector.colorize"/>
+            <node name="colorize4" position="-2.00,11.00" prototype="corevector.colorize">
+                <port name="fill" type="color" value="#ff0000ff"/>
+            </node>
+            <node name="combine1" position="2.00,12.00" prototype="list.combine"/>
+            <node name="connect1" position="2.00,4.00" prototype="corevector.connect"/>
+            <node name="divide1" position="6.00,2.00" prototype="math.divide">
+                <port name="value1" type="float" value="200.0"/>
+                <port name="value2" type="float" value="0.0"/>
+            </node>
+            <node name="fit1" position="2.00,5.00" prototype="corevector.fit">
+                <port name="width" type="float" value="100.0"/>
+                <port name="height" type="float" value="200.0"/>
+                <port name="keep_proportions" type="boolean" value="false"/>
+            </node>
+            <node name="grid1" position="8.00,7.00" prototype="corevector.grid">
+                <port name="columns" type="int" value="2"/>
+                <port name="rows" type="int" value="1"/>
+                <port name="width" type="float" value="200.0"/>
+                <port name="height" type="float" value="0.0"/>
+            </node>
+            <node name="group1" position="2.00,10.00" prototype="corevector.group"/>
+            <node name="group2" position="2.00,14.00" prototype="corevector.group"/>
+            <node name="multiply1" position="9.00,4.00" prototype="math.multiply"/>
+            <node name="nElementos" position="8.00,0.00" prototype="math.number">
+                <port name="value" type="float" value="100.0"/>
+            </node>
+            <node name="point1" position="2.00,2.00" prototype="corevector.point"/>
+            <node name="rect1" position="2.00,1.00" prototype="corevector.rect">
+                <port name="width" type="float" value="200.0"/>
+                <port name="height" type="float" value="200.0"/>
+            </node>
+            <node name="rect3" position="-2.00,8.00" prototype="corevector.rect">
+                <port name="width" type="float" value="200.0"/>
+                <port name="height" type="float" value="200.0"/>
+            </node>
+            <node name="slice1" position="2.00,3.00" prototype="list.slice">
+                <port name="size" type="int" value="3"/>
+            </node>
+            <node name="subtract1" position="9.00,5.00" prototype="math.subtract"/>
+            <node name="translate1" position="2.00,8.00" prototype="corevector.translate"/>
+            <port childReference="nElementos.value" description="" label="" name="nElementos" range="value" type="float" value="100.0" widget="float"/>
+            <port childReference="colorize1.fill" description="The new fill color. Set alpha to 0 for no fill." label="" name="fill" range="value" type="color" value="#000000ff" widget="color"/>
+            <port childReference="colorize4.fill" description="The new fill color. Set alpha to 0 for no fill." label="" name="fill2" range="value" type="color" value="#ff0000ff" widget="color"/>
+            <conn input="point1.value" output="rect1"/>
+            <conn input="slice1.list" output="point1"/>
+            <conn input="connect1.points" output="slice1"/>
+            <conn input="translate1.shape" output="fit1"/>
+            <conn input="translate1.translate" output="grid1"/>
+            <conn input="divide1.value2" output="nElementos"/>
+            <conn input="fit1.width" output="divide1"/>
+            <conn input="multiply1.value2" output="nElementos"/>
+            <conn input="multiply1.value1" output="divide1"/>
+            <conn input="subtract1.value2" output="divide1"/>
+            <conn input="subtract1.value1" output="multiply1"/>
+            <conn input="grid1.width" output="subtract1"/>
+            <conn input="grid1.columns" output="nElementos"/>
+            <conn input="fit1.shape" output="connect1"/>
+            <conn input="colorize1.shape" output="translate1"/>
+            <conn input="group1.shapes" output="colorize1"/>
+            <conn input="align2.shape" output="rect3"/>
+            <conn input="colorize4.shape" output="align2"/>
+            <conn input="align1.shape" output="combine1"/>
+            <conn input="combine1.list2" output="group1"/>
+            <conn input="combine1.list1" output="colorize4"/>
+            <conn input="group2.shapes" output="align1"/>
+        </node>
+        <node name="add1" position="6.00,3.00" prototype="math.add"/>
+        <node name="align1" position="-2.00,19.00" prototype="corevector.align"/>
+        <node name="color5" position="18.00,3.00" prototype="color.color"/>
+        <node name="color6" position="21.00,3.00" prototype="color.color"/>
+        <node name="color7" position="12.00,3.00" prototype="color.color"/>
+        <node name="color8" position="15.00,3.00" prototype="color.color"/>
+        <node name="combine1" position="-3.00,1.00" prototype="list.combine"/>
+        <node name="combine6" position="-1.00,11.00" prototype="list.combine"/>
+        <node name="copy1" position="-2.00,17.00" prototype="corevector.copy">
+            <port name="copies" type="int" value="3"/>
+        </node>
+        <node name="count1" position="6.00,1.00" prototype="list.count"/>
+        <node name="cull5" position="12.00,1.00" prototype="list.cull"/>
+        <node name="cull6" position="18.00,1.00" prototype="list.cull"/>
+        <node name="cull7" position="15.00,1.00" prototype="list.cull"/>
+        <node name="cull8" position="21.00,1.00" prototype="list.cull"/>
+        <node name="divide1" position="6.00,2.00" prototype="math.divide">
+            <port name="value2" type="float" value="2.0"/>
+        </node>
+        <node name="divide2" position="1.00,14.00" prototype="math.divide">
+            <port name="value1" type="float" value="1920.0"/>
+            <port name="value2" type="float" value="2.0"/>
+        </node>
+        <node name="equals5" position="21.00,-1.00" prototype="string.equals"/>
+        <node name="equals6" position="18.00,-1.00" prototype="string.equals"/>
+        <node name="equals7" position="15.00,-1.00" prototype="string.equals"/>
+        <node name="equals8" position="12.00,-1.00" prototype="string.equals"/>
+        <node name="first1" position="-3.00,5.00" prototype="list.first"/>
+        <node name="first3" position="2.00,5.00" prototype="list.first"/>
+        <node name="fit1" position="-3.00,15.00" prototype="corevector.fit">
+            <port name="width" type="float" value="1920.0"/>
+            <port name="height" type="float" value="1080.0"/>
+            <port name="keep_proportions" type="boolean" value="false"/>
+        </node>
+        <node name="frame1" position="2.00,-2.00" prototype="core.frame"/>
+        <node name="group1" position="-1.00,12.00" prototype="corevector.group"/>
+        <node name="group2" position="-2.00,18.00" prototype="corevector.group"/>
+        <node name="import_svg2" position="12.00,-6.00" prototype="corevector.import_svg">
+            <port name="file" type="string" value="paleta.svg"/>
+        </node>
+        <node name="logical5" position="21.00,0.00" prototype="math.logical">
+            <port name="boolean2" type="boolean" value="true"/>
+            <port name="comparator" type="string" value="xor"/>
+        </node>
+        <node name="logical6" position="18.00,0.00" prototype="math.logical">
+            <port name="boolean2" type="boolean" value="true"/>
+            <port name="comparator" type="string" value="xor"/>
+        </node>
+        <node name="logical7" position="15.00,0.00" prototype="math.logical">
+            <port name="boolean2" type="boolean" value="true"/>
+            <port name="comparator" type="string" value="xor"/>
+        </node>
+        <node name="logical8" position="12.00,0.00" prototype="math.logical">
+            <port name="boolean2" type="boolean" value="true"/>
+            <port name="comparator" type="string" value="xor"/>
+        </node>
+        <node name="lookup1" position="-8.00,10.00" prototype="data.lookup"/>
+        <node name="lookup2" position="12.00,-4.00" prototype="data.lookup">
+            <port name="key" type="string" value="fill"/>
+        </node>
+        <node name="make_point1" position="1.00,15.00" prototype="corevector.make_point"/>
+        <node name="pick5" position="21.00,-2.00" prototype="list.pick">
+            <port name="amount" type="int" value="1"/>
+            <port name="seed" type="int" value="7"/>
+        </node>
+        <node name="pick6" position="18.00,-2.00" prototype="list.pick">
+            <port name="amount" type="int" value="1"/>
+            <port name="seed" type="int" value="7"/>
+        </node>
+        <node name="pick7" position="15.00,-2.00" prototype="list.pick">
+            <port name="amount" type="int" value="1"/>
+            <port name="seed" type="int" value="9"/>
+        </node>
+        <node name="pick8" position="12.00,-2.00" prototype="list.pick">
+            <port name="amount" type="int" value="1"/>
+        </node>
+        <node name="random_numbers2" position="16.00,-6.00" prototype="math.random_numbers">
+            <port name="amount" type="int" value="4"/>
+            <port name="seed" type="int" value="13"/>
+        </node>
+        <node name="range1" position="-3.00,-2.00" prototype="math.range">
+            <port name="start" type="float" value="1.0"/>
+            <port name="end" type="float" value="26.0"/>
+        </node>
+        <node name="range3" position="-3.00,7.00" prototype="math.range">
+            <port name="end" type="float" value="360.0"/>
+            <port name="step" type="float" value="180.0"/>
+        </node>
+        <node name="range4" position="3.00,7.00" prototype="math.range">
+            <port name="start" type="float" value="90.0"/>
+            <port name="end" type="float" value="360.0"/>
+            <port name="step" type="float" value="180.0"/>
+        </node>
+        <node name="repeat1" position="-3.00,2.00" prototype="list.repeat">
+            <port name="amount" type="int" value="2"/>
+            <port name="per_item" type="boolean" value="true"/>
+        </node>
+        <node name="reverse1" position="-2.00,-1.00" prototype="list.reverse"/>
+        <node name="rotate1" position="-3.00,9.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="90.0"/>
+        </node>
+        <node name="rotate2" position="2.00,9.00" prototype="corevector.rotate">
+            <port name="angle" type="float" value="90.0"/>
+        </node>
+        <node name="shift1" position="-3.00,4.00" prototype="list.shift"/>
+        <node name="shift3" position="2.00,4.00" prototype="list.shift"/>
+        <node name="slice5" position="15.00,-3.00" prototype="list.slice">
+            <port name="start_index" type="int" value="1"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice6" position="18.00,-3.00" prototype="list.slice">
+            <port name="start_index" type="int" value="2"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice7" position="21.00,-3.00" prototype="list.slice">
+            <port name="start_index" type="int" value="3"/>
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="slice8" position="12.00,-3.00" prototype="list.slice">
+            <port name="size" type="int" value="1"/>
+        </node>
+        <node name="ungroup2" position="12.00,-5.00" prototype="corevector.ungroup"/>
+        <conn input="Triangulos.nElementos" output="first1"/>
+        <conn input="first1.list" output="shift1"/>
+        <conn input="shift1.list" output="repeat1"/>
+        <conn input="shift1.amount" output="frame1"/>
+        <conn input="reverse1.list" output="range1"/>
+        <conn input="combine1.list1" output="range1"/>
+        <conn input="combine1.list2" output="reverse1"/>
+        <conn input="repeat1.list" output="combine1"/>
+        <conn input="rotate1.shape" output="Triangulos"/>
+        <conn input="rotate1.angle" output="range3"/>
+        <conn input="Triangulos2.nElementos" output="first3"/>
+        <conn input="first3.list" output="shift3"/>
+        <conn input="add1.value1" output="frame1"/>
+        <conn input="divide1.value1" output="count1"/>
+        <conn input="add1.value2" output="divide1"/>
+        <conn input="shift3.amount" output="add1"/>
+        <conn input="combine6.list1" output="rotate1"/>
+        <conn input="rotate2.shape" output="Triangulos2"/>
+        <conn input="rotate2.angle" output="range4"/>
+        <conn input="combine6.list2" output="rotate2"/>
+        <conn input="group1.shapes" output="combine6"/>
+        <conn input="fit1.shape" output="group1"/>
+        <conn input="ungroup2.shape" output="import_svg2"/>
+        <conn input="lookup2.list" output="ungroup2"/>
+        <conn input="pick8.list" output="lookup2"/>
+        <conn input="equals8.string" output="lookup2"/>
+        <conn input="equals8.equals" output="pick8"/>
+        <conn input="cull5.list" output="lookup2"/>
+        <conn input="logical8.boolean1" output="equals8"/>
+        <conn input="cull5.booleans" output="logical8"/>
+        <conn input="equals7.equals" output="pick7"/>
+        <conn input="logical7.boolean1" output="equals7"/>
+        <conn input="pick7.list" output="cull5"/>
+        <conn input="equals7.string" output="cull5"/>
+        <conn input="cull7.list" output="cull5"/>
+        <conn input="cull7.booleans" output="logical7"/>
+        <conn input="equals6.equals" output="pick6"/>
+        <conn input="logical6.boolean1" output="equals6"/>
+        <conn input="cull6.booleans" output="logical6"/>
+        <conn input="equals6.string" output="cull7"/>
+        <conn input="cull6.list" output="cull7"/>
+        <conn input="pick6.list" output="cull7"/>
+        <conn input="equals5.equals" output="pick5"/>
+        <conn input="logical5.boolean1" output="equals5"/>
+        <conn input="cull8.booleans" output="logical5"/>
+        <conn input="pick5.list" output="cull6"/>
+        <conn input="equals5.string" output="cull6"/>
+        <conn input="cull8.list" output="cull6"/>
+        <conn input="slice8.list" output="random_numbers2"/>
+        <conn input="pick8.seed" output="slice8"/>
+        <conn input="slice5.list" output="random_numbers2"/>
+        <conn input="pick7.seed" output="slice5"/>
+        <conn input="slice6.list" output="random_numbers2"/>
+        <conn input="pick6.seed" output="slice6"/>
+        <conn input="slice7.list" output="random_numbers2"/>
+        <conn input="pick5.seed" output="slice7"/>
+        <conn input="color7.color" output="pick8"/>
+        <conn input="color8.color" output="pick7"/>
+        <conn input="color5.color" output="pick6"/>
+        <conn input="color6.color" output="pick5"/>
+        <conn input="Triangulos.fill" output="color7"/>
+        <conn input="Triangulos.fill2" output="color8"/>
+        <conn input="Triangulos2.fill" output="color5"/>
+        <conn input="Triangulos2.fill2" output="color6"/>
+        <conn input="shift3.list" output="repeat1"/>
+        <conn input="count1.list" output="repeat1"/>
+        <conn input="fit1.width" output="divide2"/>
+        <conn input="copy1.shape" output="fit1"/>
+        <conn input="make_point1.x" output="divide2"/>
+        <conn input="copy1.translate" output="make_point1"/>
+        <conn input="group2.shapes" output="copy1"/>
+        <conn input="align1.shape" output="group2"/>
+    </node>
+</ndbx>
