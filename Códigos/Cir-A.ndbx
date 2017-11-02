@@ -28,7 +28,7 @@
         <node name="colorize1" position="-1.00,12.00" prototype="corevector.colorize"/>
         <node name="colorize2" position="-13.00,15.00" prototype="corevector.colorize"/>
         <node name="colunas" position="-11.00,-7.00" prototype="math.integer">
-            <port name="value" type="int" value="9"/>
+            <port name="value" type="int" value="5"/>
         </node>
         <node name="combine1" position="-1.00,2.00" prototype="list.combine"/>
         <node name="combine2" position="-9.00,13.00" prototype="list.combine"/>
@@ -55,7 +55,7 @@
             <port name="file" type="string" value="paleta.svg"/>
         </node>
         <node name="linhas" position="-8.00,-7.00" prototype="math.integer">
-            <port name="value" type="int" value="2"/>
+            <port name="value" type="int" value="3"/>
         </node>
         <node name="logical5" position="21.00,0.00" prototype="math.logical">
             <port name="boolean2" type="boolean" value="true"/>
@@ -208,7 +208,7 @@
         <node name="random_numbers2" position="16.00,-6.00" prototype="math.random_numbers">
             <port name="amount" type="int" value="4"/>
             <port name="end" type="float" value="1000.0"/>
-            <port name="seed" type="int" value="158"/>
+            <port name="seed" type="int" value="160"/>
         </node>
         <node name="range1" position="-5.00,-1.00" prototype="math.range">
             <port name="end" type="float" value="1920.0"/>

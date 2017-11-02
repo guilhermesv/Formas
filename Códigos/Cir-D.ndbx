@@ -11,7 +11,7 @@
         <node name="color8" position="14.00,-5.00" prototype="color.color"/>
         <node name="colorize1" position="-6.00,4.00" prototype="corevector.colorize"/>
         <node name="colunas" position="-11.00,-8.00" prototype="math.integer">
-            <port name="value" type="int" value="16"/>
+            <port name="value" type="int" value="4"/>
         </node>
         <node name="combine1" position="-10.00,7.00" prototype="list.combine"/>
         <node name="cull5" position="11.00,-7.00" prototype="list.cull"/>
@@ -121,7 +121,7 @@
         <node name="random_numbers2" position="15.00,-14.00" prototype="math.random_numbers">
             <port name="amount" type="int" value="4"/>
             <port name="end" type="float" value="1000.0"/>
-            <port name="seed" type="int" value="183"/>
+            <port name="seed" type="int" value="189"/>
         </node>
         <node name="rect1" position="-6.00,3.00" prototype="corevector.rect">
             <port name="width" type="float" value="1920.0"/>
